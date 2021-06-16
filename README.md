@@ -1,6 +1,6 @@
 This is a java based im app which runs an HTTP Server
 
-You can find the API documentation in the api.yml
+You can find the openapi documentation in the api.yml file
 
 How to run it:
 ```
