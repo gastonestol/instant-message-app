@@ -1,1 +1,36 @@
-#TODO: Create a manifest to deploy in k8s
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: im-app
+  name: im-backend
+  labels:
+    app: im-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: im-backend
+  template:
+    metadata:
+      labels:
+        app: im-backend
+    spec:
+      containers:
+        - name: im-backend
+          image: im-app
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: im-app
+  name: im-service
+spec:
+  selector:
+    app: im-backend
+  ports:
+    - protocol: http
+      port: 8080
+      targetPort: 8080

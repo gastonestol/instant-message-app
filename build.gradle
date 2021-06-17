@@ -1,14 +1,24 @@
-plugins {
-    id 'java'
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'jacoco'
+
+mainClassName = 'com.im.message.app.Application'
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    archiveName "app.jar"
 }
 
 group 'com.im.message.app'
 version '1.0'
 
-apply plugin: 'application'
-apply plugin: 'jacoco'
 
-mainClassName = 'com.im.message.app.Application'
 
 sourceCompatibility = 1.8
 

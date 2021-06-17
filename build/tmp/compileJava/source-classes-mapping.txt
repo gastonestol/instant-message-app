@@ -1,62 +1,62 @@
-com/asapp/backend/challenge/utils/JSONUtil.java
- com.asapp.backend.challenge.utils.JSONUtil
-com/asapp/backend/challenge/resources/HealthResource.java
- com.asapp.backend.challenge.resources.HealthResource
-com/asapp/backend/challenge/utils/Path.java
- com.asapp.backend.challenge.utils.Path
-com/asapp/backend/challenge/resources/MessageResource.java
- com.asapp.backend.challenge.resources.MessageResource
-com/asapp/backend/challenge/resources/SendMessageResource.java
- com.asapp.backend.challenge.resources.SendMessageResource
-com/asapp/backend/challenge/services/UserService.java
- com.asapp.backend.challenge.services.UserService
-com/asapp/backend/challenge/model/implementations/MessageRepositoryImpl.java
- com.asapp.backend.challenge.model.implementations.MessageRepositoryImpl
-com/asapp/backend/challenge/filter/TokenValidatorFilter.java
- com.asapp.backend.challenge.filter.TokenValidatorFilter
-com/asapp/backend/challenge/resources/UserResource.java
- com.asapp.backend.challenge.resources.UserResource
-com/asapp/backend/challenge/model/repositories/MetadataRepository.java
- com.asapp.backend.challenge.model.repositories.MetadataRepository
-com/asapp/backend/challenge/controller/UsersController.java
- com.asapp.backend.challenge.controller.UsersController
-com/asapp/backend/challenge/model/entities/Metadata.java
- com.asapp.backend.challenge.model.entities.Metadata
-com/asapp/backend/challenge/action/UserActions.java
- com.asapp.backend.challenge.action.UserActions
-com/asapp/backend/challenge/model/repositories/UserRepository.java
- com.asapp.backend.challenge.model.repositories.UserRepository
-com/asapp/backend/challenge/action/AuthActions.java
- com.asapp.backend.challenge.action.AuthActions
-com/asapp/backend/challenge/controller/AuthController.java
- com.asapp.backend.challenge.controller.AuthController
-com/asapp/backend/challenge/resources/MessageListResource.java
- com.asapp.backend.challenge.resources.MessageListResource
-com/asapp/backend/challenge/model/repositories/MessageRepository.java
- com.asapp.backend.challenge.model.repositories.MessageRepository
-com/asapp/backend/challenge/services/MessageService.java
- com.asapp.backend.challenge.services.MessageService
-com/asapp/backend/challenge/model/entities/User.java
- com.asapp.backend.challenge.model.entities.User
-com/asapp/backend/challenge/controller/HealthController.java
- com.asapp.backend.challenge.controller.HealthController
-com/asapp/backend/challenge/controller/MessagesController.java
- com.asapp.backend.challenge.controller.MessagesController
-com/asapp/backend/challenge/resources/LoginResource.java
- com.asapp.backend.challenge.resources.LoginResource
-com/asapp/backend/challenge/services/MetadataService.java
- com.asapp.backend.challenge.services.MetadataService
-com/asapp/backend/challenge/Application.java
- com.asapp.backend.challenge.Application
-com/asapp/backend/challenge/exceptions/UserNotFoundException.java
- com.asapp.backend.challenge.exceptions.UserNotFoundException
-com/asapp/backend/challenge/action/MessageActions.java
- com.asapp.backend.challenge.action.MessageActions
-com/asapp/backend/challenge/model/implementations/UserRepositoryImpl.java
- com.asapp.backend.challenge.model.implementations.UserRepositoryImpl
-com/asapp/backend/challenge/services/TokenService.java
- com.asapp.backend.challenge.services.TokenService
-com/asapp/backend/challenge/model/implementations/MetadataRepositoryImpl.java
- com.asapp.backend.challenge.model.implementations.MetadataRepositoryImpl
-com/asapp/backend/challenge/model/entities/Message.java
- com.asapp.backend.challenge.model.entities.Message
+com/im/message/app/action/MessageActions.java
+ com.im.message.app.action.MessageActions
+com/im/message/app/services/MetadataService.java
+ com.im.message.app.services.MetadataService
+com/im/message/app/controller/MessagesController.java
+ com.im.message.app.controller.MessagesController
+com/im/message/app/action/AuthActions.java
+ com.im.message.app.action.AuthActions
+com/im/message/app/resources/HealthResource.java
+ com.im.message.app.resources.HealthResource
+com/im/message/app/exceptions/UserNotFoundException.java
+ com.im.message.app.exceptions.UserNotFoundException
+com/im/message/app/services/TokenService.java
+ com.im.message.app.services.TokenService
+com/im/message/app/resources/MessageResource.java
+ com.im.message.app.resources.MessageResource
+com/im/message/app/controller/AuthController.java
+ com.im.message.app.controller.AuthController
+com/im/message/app/model/entities/Metadata.java
+ com.im.message.app.model.entities.Metadata
+com/im/message/app/controller/HealthController.java
+ com.im.message.app.controller.HealthController
+com/im/message/app/resources/LoginResource.java
+ com.im.message.app.resources.LoginResource
+com/im/message/app/controller/UsersController.java
+ com.im.message.app.controller.UsersController
+com/im/message/app/utils/JSONUtil.java
+ com.im.message.app.utils.JSONUtil
+com/im/message/app/model/repositories/MessageRepository.java
+ com.im.message.app.model.repositories.MessageRepository
+com/im/message/app/model/implementations/MetadataRepositoryImpl.java
+ com.im.message.app.model.implementations.MetadataRepositoryImpl
+com/im/message/app/services/UserService.java
+ com.im.message.app.services.UserService
+com/im/message/app/resources/SendMessageResource.java
+ com.im.message.app.resources.SendMessageResource
+com/im/message/app/model/repositories/UserRepository.java
+ com.im.message.app.model.repositories.UserRepository
+com/im/message/app/model/implementations/MessageRepositoryImpl.java
+ com.im.message.app.model.implementations.MessageRepositoryImpl
+com/im/message/app/Application.java
+ com.im.message.app.Application
+com/im/message/app/resources/MessageListResource.java
+ com.im.message.app.resources.MessageListResource
+com/im/message/app/model/entities/Message.java
+ com.im.message.app.model.entities.Message
+com/im/message/app/model/repositories/MetadataRepository.java
+ com.im.message.app.model.repositories.MetadataRepository
+com/im/message/app/services/MessageService.java
+ com.im.message.app.services.MessageService
+com/im/message/app/action/UserActions.java
+ com.im.message.app.action.UserActions
+com/im/message/app/resources/UserResource.java
+ com.im.message.app.resources.UserResource
+com/im/message/app/model/implementations/UserRepositoryImpl.java
+ com.im.message.app.model.implementations.UserRepositoryImpl
+com/im/message/app/model/entities/User.java
+ com.im.message.app.model.entities.User
+com/im/message/app/utils/Path.java
+ com.im.message.app.utils.Path
+com/im/message/app/filter/TokenValidatorFilter.java
+ com.im.message.app.filter.TokenValidatorFilter
