@@ -4,6 +4,12 @@ You can find the openapi documentation in the api.yml file
 
 How to run it:
 ```
-./gradlew run
+gradle:
+ ./gradle run
+
+docker:
+ docker build -t im-app .
+ docker run -dp 8080:8080 im-app
 ```
+
 
