@@ -69,7 +69,14 @@ public class Application {
         Spark.get(Path.MESSAGES, messagesController.getMessages);
         // Health
         Spark.post(Path.HEALTH, HealthController.check);
-        Spark.after((request, response) -> response.header("Content-Type", "application/json"));
+        //type and CORS
+        Spark.after((request, response) -> {
+            response.header("Content-Type", "application/json");
+            response.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+            response.header("Access-Control-Allow-Origin", "*");
+            response.header("Access-Control-Allow-Headers", "Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,");
+            response.header("Access-Control-Allow-Credentials", "true");
+        });
     }
 
 
