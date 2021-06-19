@@ -61,6 +61,7 @@ public class Application {
         // Configure Endpoints
         // Users
         Spark.post(Path.USERS, usersController.createUser);
+        Spark.get(Path.USERS, usersController.getUser);
         // Auth
         Spark.post(Path.LOGIN, authController.login);
         // Messages

@@ -57,6 +57,41 @@ paths:
                     format: int64
                     description: |
                       User ID of the newly created user.
+    get:
+      operationId: Seach a User
+      description: |
+        Seach a user by username.
+      security:
+        - token: [ ]
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+            format: int64
+            description: |
+              User name to search
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                required:
+                  - id
+                  - username
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    description: |
+                      User ID of the user.
+                  username:
+                    type: string
+                    format: int64
+                    description: |
+                      User name.
   /login:
     post:
       operationId: Login

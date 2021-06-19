@@ -35,4 +35,16 @@ public class UsersController {
         }
 
     };
+
+    public Route getUser = (Request req, Response resp) -> {
+        String username = req.queryParams(USER_NAME_PROPERTY);
+        Optional<User> user = userActions.getUser(username);
+        if(user.isPresent()){
+            resp.status(200);
+            return JSONUtil.dataToJson(new UserResource(user.get()));
+        }else{
+            resp.status(409);
+            return "";
+        }
+    };
 }

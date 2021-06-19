@@ -21,4 +21,8 @@ public class UserActions {
         return userService.createUser(userName,encryptedPassword);
     }
 
+    public Optional<User> getUser(String userName){
+        return userService.getUser(userName);
+    }
+
 }
