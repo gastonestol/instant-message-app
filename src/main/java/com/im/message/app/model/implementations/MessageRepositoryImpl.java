@@ -58,9 +58,6 @@ public class MessageRepositoryImpl implements MessageRepository {
                 .addColumnMapping("user_name","senderUserName")
                 .executeAndFetch(MessageDto.class);
             return messages;
-        }catch (Exception e){
-            System.out.println(e.getCause());
-            return new ArrayList<>();
         }
     }
 
@@ -68,8 +65,7 @@ public class MessageRepositoryImpl implements MessageRepository {
     public Long setMessageAsAnsewerd(Long messageId) {
         try (Connection conn = sql2o.open()) {
             return conn.createQuery("update messages" +
-                    " set answered = 1 where id = :id" +
-                    "VALUES (:sender_id,:receiver_id,:contentType,:content, :date_created, :metadata_id, 0)")
+                    " set answered = 1 where id = :id ")
                     .addParameter("id",messageId)
                     .executeUpdate()
                     .getKey(Long.class);
