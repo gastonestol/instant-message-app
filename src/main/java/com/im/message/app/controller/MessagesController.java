@@ -2,6 +2,7 @@ package com.im.message.app.controller;
 
 import com.im.message.app.action.MessageActions;
 import com.im.message.app.model.entities.Message;
+import com.im.message.app.model.entities.MessageDto;
 import com.im.message.app.resources.MessageListResource;
 import com.im.message.app.resources.MessageResource;
 import com.im.message.app.resources.SendMessageResource;
@@ -23,6 +24,8 @@ public class MessagesController {
     public static final String TEXT_PROPERTY = "text";
     public static final String START_PROPERTY = "start";
     public static final String LIMIT_PROPERTY = "limit";
+    public static final String ID_PROPERTY = "id";
+
 
     private MessageActions actions;
 
@@ -46,13 +49,20 @@ public class MessagesController {
         Long limit = req.queryParams().contains(LIMIT_PROPERTY)?
                 Long.parseLong(req.queryParams(LIMIT_PROPERTY)):
                 defaultLimit;
-        List<Message> messageList = actions.getMessages(
+        List<MessageDto> messageList = actions.getMessages(
                 Long.parseLong(req.queryParams(RECIPIENT_PROPERTY)),
                 Long.parseLong(req.queryParams(START_PROPERTY)),
                 limit
         );
         return JSONUtil.dataToJson(new MessageListResource(
                 messageList.stream().map(MessageResource::new).collect(Collectors.toList())));
+    };
+
+    public Route updateMessage = (Request req, Response rep) -> {
+        JSONObject body = new JSONObject(req.body());
+        Long id = body.getLong(ID_PROPERTY);
+        actions.setMessageAsAnswered(id);
+        return "";
     };
 
 }

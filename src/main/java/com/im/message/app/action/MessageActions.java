@@ -1,6 +1,7 @@
 package com.im.message.app.action;
 
 import com.im.message.app.model.entities.Message;
+import com.im.message.app.model.entities.MessageDto;
 import com.im.message.app.model.entities.Metadata;
 import com.im.message.app.services.MetadataService;
 import com.im.message.app.services.MessageService;
@@ -26,8 +27,11 @@ public class MessageActions {
         }
         return messageService.saveMessage(senderId,receiverId,contentType,content,metadataId);
     }
-    public List<Message> getMessages(Long receiverId, Long startId, Long limit) {
+    public List<MessageDto> getMessages(Long receiverId, Long startId, Long limit) {
         return messageService.getMessages(receiverId,startId,limit);
+    }
+    public Long setMessageAsAnswered(Long messageId) {
+        return messageService.setMessageAsAnswered(messageId);
     }
 
 }

@@ -12,7 +12,7 @@ public class Message {
     private Date dateCreated;
     private Long metadataId;
 
-    public Message(Long senderId, Long receiverId, String messageType, String message, Date creationDate, Long metadataId) {
+    public Message(Long senderId, Long receiverId, String messageType, String message, Date creationDate, Long metadataId ){
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.contentType = messageType;
@@ -78,4 +78,5 @@ public class Message {
     public void setMetadataId(Long metadataId) {
         this.metadataId = metadataId;
     }
+
 }

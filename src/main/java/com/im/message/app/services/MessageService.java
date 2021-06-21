@@ -1,6 +1,7 @@
 package com.im.message.app.services;
 
 import com.im.message.app.model.entities.Message;
+import com.im.message.app.model.entities.MessageDto;
 import com.im.message.app.model.repositories.MessageRepository;
 import java.util.List;
 
@@ -16,8 +17,12 @@ public class MessageService {
         return messageRepository.saveMessage(senderId,receiverId,contentType,content,metadataId);
     }
 
-    public List<Message> getMessages(Long receiverId, Long startId, Long limit){
+    public List<MessageDto> getMessages(Long receiverId, Long startId, Long limit){
         return messageRepository.getMessages(receiverId,startId,limit);
 
+    }
+
+    public Long setMessageAsAnswered(Long messageId){
+        return messageRepository.setMessageAsAnsewerd(messageId);
     }
 }

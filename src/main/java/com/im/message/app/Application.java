@@ -19,7 +19,7 @@ import com.im.message.app.services.MetadataService;
 import com.im.message.app.services.TokenService;
 import com.im.message.app.services.UserService;
 import com.im.message.app.utils.Path;
-import spark.Spark;
+import static spark.Spark.*;
 
 public class Application {
 
@@ -35,7 +35,7 @@ public class Application {
     void init(){
 
         // Spark Configuration
-        Spark.port(8080);
+        port(8080);
 
         //Create Repositories
         UserRepository userRepository = new UserRepositoryImpl();
@@ -59,24 +59,25 @@ public class Application {
         MessagesController messagesController = new MessagesController(messageActions);
 
         // Configure Endpoints
+        before("/*" , new TokenValidatorFilter(tokenService));
         // Users
-        Spark.post(Path.USERS, usersController.createUser);
-        Spark.get(Path.USERS, usersController.getUser);
+        post(Path.USERS, usersController.createUser);
+        get(Path.USERS, usersController.getUser);
         // Auth
-        Spark.post(Path.LOGIN, authController.login);
+        post(Path.LOGIN, authController.login);
         // Messages
-        Spark.before(Path.MESSAGES, new TokenValidatorFilter(tokenService));
-        Spark.post(Path.MESSAGES, messagesController.sendMessage);
-        Spark.get(Path.MESSAGES, messagesController.getMessages);
+        post(Path.MESSAGES, messagesController.sendMessage);
+        get(Path.MESSAGES, messagesController.getMessages);
+        put(Path.MESSAGES, messagesController.updateMessage);
         // Health
-        Spark.post(Path.HEALTH, HealthController.check);
+        post(Path.HEALTH, HealthController.check);
         //type and CORS
-        Spark.after((request, response) -> {
-            response.header("Content-Type", "application/json");
-            response.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+        options("/*", (request, response) -> "OK");
+        before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
-            response.header("Access-Control-Allow-Headers", "Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,");
-            response.header("Access-Control-Allow-Credentials", "true");
+            response.header("Access-Control-Allow-Methods", "OPTIONS,ORDER,GET,PUT,POST,DELETE,PATCH,ORIGIN");
+            response.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept,Authorization");
+            response.header("Content-Type", "application/json");
         });
     }
 

@@ -8,6 +8,8 @@ com/im/message/app/action/AuthActions.java
  com.im.message.app.action.AuthActions
 com/im/message/app/resources/HealthResource.java
  com.im.message.app.resources.HealthResource
+com/im/message/app/model/entities/MessageDto.java
+ com.im.message.app.model.entities.MessageDto
 com/im/message/app/exceptions/UserNotFoundException.java
  com.im.message.app.exceptions.UserNotFoundException
 com/im/message/app/services/TokenService.java
@@ -36,10 +38,10 @@ com/im/message/app/resources/SendMessageResource.java
  com.im.message.app.resources.SendMessageResource
 com/im/message/app/model/repositories/UserRepository.java
  com.im.message.app.model.repositories.UserRepository
-com/im/message/app/model/implementations/MessageRepositoryImpl.java
- com.im.message.app.model.implementations.MessageRepositoryImpl
-com/im/message/app/Application.java
- com.im.message.app.Application
+com/im/message/app/utils/Path.java
+ com.im.message.app.utils.Path
+com/im/message/app/filter/TokenValidatorFilter.java
+ com.im.message.app.filter.TokenValidatorFilter
 com/im/message/app/resources/MessageListResource.java
  com.im.message.app.resources.MessageListResource
 com/im/message/app/model/entities/Message.java
@@ -56,7 +58,7 @@ com/im/message/app/model/implementations/UserRepositoryImpl.java
  com.im.message.app.model.implementations.UserRepositoryImpl
 com/im/message/app/model/entities/User.java
  com.im.message.app.model.entities.User
-com/im/message/app/utils/Path.java
- com.im.message.app.utils.Path
-com/im/message/app/filter/TokenValidatorFilter.java
- com.im.message.app.filter.TokenValidatorFilter
+com/im/message/app/Application.java
+ com.im.message.app.Application
+com/im/message/app/model/implementations/MessageRepositoryImpl.java
+ com.im.message.app.model.implementations.MessageRepositoryImpl
